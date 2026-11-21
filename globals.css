@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
+}
+
+.lesson-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.code-block {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Fira Code', monospace;
+}
