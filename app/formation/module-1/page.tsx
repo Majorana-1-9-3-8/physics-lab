@@ -40,6 +40,17 @@ export default function ModuleOnePage() {
         </p>
       </section>
 
+      <nav aria-label="Leçons du module" className="rounded-xl border border-slate-200 bg-white p-5">
+        <p className="mb-3 text-sm font-bold text-slate-800">Dans ce module</p>
+        <div className="flex flex-wrap gap-2 text-sm">
+          <Link href="#premier-programme" className="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700 hover:bg-blue-50">1. Premier programme</Link>
+          <Link href="#variables" className="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700 hover:bg-blue-50">2. Variables</Link>
+          <Link href="#conditions" className="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700 hover:bg-blue-50">3. Conditions</Link>
+          <Link href="#boucles" className="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700 hover:bg-blue-50">4. Boucles</Link>
+          <Link href="#fonctions" className="rounded-full bg-slate-100 px-3 py-1.5 text-slate-700 hover:bg-blue-50">5. Fonctions</Link>
+        </div>
+      </nav>
+
       <section className="space-y-5" id="premier-programme">
         <div>
           <p className="text-xs font-bold uppercase tracking-widest text-blue-700">Leçon 1</p>
@@ -245,4 +256,3 @@ int main() {
     </article>
   );
 }
-
