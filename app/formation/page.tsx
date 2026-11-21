@@ -3,28 +3,27 @@ import Link from "next/link";
 const modules = [
   {
     title: "Module 1 : Les bases du C++",
-    description: "Variables, types, conditions, boucles, fonctions.",
+    description: "Variables, types, conditions, boucles et fonctions, avec une première chute libre en 1D.",
     link: "/formation/module-1",
     level: "Débutant absolu",
-    available: true,
   },
   {
-    title: "Module 2 : Structures et Mémoire",
-    description: "Tableaux, pointeurs, gestion de la mémoire, classes.",
+    title: "Module 2 : Données, mémoire et mouvement en 2D",
+    description: "Structures, tableaux, références, pointeurs et simulation numérique d’un projectile.",
+    link: "/formation/module-2",
+    level: "Après les bases",
+  },
+  {
+    title: "Module 3 : Classes, STL et C++ moderne",
+    description: "Encapsulation, objets, collections, algorithmes et gestion sûre de la mémoire.",
+    link: "/formation/module-3",
     level: "Intermédiaire",
-    available: false,
   },
   {
-    title: "Module 3 : C++ Moderne et STL",
-    description: "Programmation orientée objet, STL, templates, C++20/23.",
+    title: "Module 4 : Gravitation et simulation en 3D",
+    description: "Vecteurs 3D, loi de Newton, intégration numérique et vérification scientifique.",
+    link: "/formation/module-4",
     level: "Avancé",
-    available: false,
-  },
-  {
-    title: "Module 4 : Physique et Simulations",
-    description: "Application aux vecteurs, mécanique, gravitation, trous noirs.",
-    level: "Progression avancée",
-    available: false,
   },
 ];
 
@@ -34,28 +33,23 @@ export default function FormationPage() {
       <div>
         <h1 className="text-3xl font-bold text-slate-900">Formation C++</h1>
         <p className="mt-3 text-slate-600">
-          Un parcours progressif conçu pour vous rendre autonome dans la programmation scientifique.
+          Un parcours progressif : des premières instructions à une simulation gravitationnelle en 3D.
+          Suis les modules dans l’ordre et réalise les exercices dans tes propres fichiers C++.
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {modules.map((module) => (
+        {modules.map((module, index) => (
           <div key={module.title} className="rounded-xl border border-slate-200 bg-white p-6 transition hover:shadow-md">
-            <div className="mb-3 flex items-start justify-between gap-3">
+            <div className="mb-3 flex items-center justify-between gap-3">
               <span className="rounded bg-slate-100 px-2 py-1 text-xs font-bold text-slate-600">{module.level}</span>
-              {!module.available && (
-                <span className="rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-800">En préparation</span>
-              )}
+              <span className="text-xs font-semibold tracking-wide text-slate-400">0{index + 1}</span>
             </div>
             <h2 className="mb-2 text-xl font-bold">{module.title}</h2>
-            <p className="mb-4 text-sm text-slate-600">{module.description}</p>
-            {module.available && module.link ? (
-              <Link href={module.link} className="text-sm font-medium text-physics-primary hover:underline">
-                Accéder au module →
-              </Link>
-            ) : (
-              <span className="text-sm text-slate-400">Le contenu de ce module sera ajouté progressivement.</span>
-            )}
+            <p className="mb-4 text-sm leading-6 text-slate-600">{module.description}</p>
+            <Link href={module.link} className="text-sm font-medium text-physics-primary hover:underline">
+              Accéder au cours →
+            </Link>
           </div>
         ))}
       </div>
